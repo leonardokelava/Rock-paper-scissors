@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function library example</title>
+  <style>
+  
+  button {
+     
+     display:block; 
+     margin: 200px auto;
+     width: 20%;
+     height:100px;
+     font-size:30px; 
+     font-weight: 800 ; 
+     
+
+  }
+div{
+ 
+  width: 80%; 
+
+}
+
+
+  
+  </style>
+
+</head>
+<body>
+
+  
+  
+  <p>
+  <div>
+    <button onclick="game()" > Let's play </button>
+  </div>
+  </p> 
+
+  
+  
+  <script>
+  
+   var moves= [ "rock" , "paper" , "scissors" ] ;
+
+function computerPlay() {
+
+    let x = Math.floor(Math.random() * 2);
+    return (moves[x]); 
+}
+ 
+    let computer = 0;
+    let player = 0 ;
+
+function oneRound(playerSelection, computerSelection) {
+
+    computerSelection = computerPlay() ;
+
+    playerchoice= function() {
+        choice=prompt("Choose rock, paper or scissors" , );
+        return choice.toLowerCase(); 
+      
+    }
+    
+    
+    playerSelection= playerchoice(); 
+  
+  if (computerSelection == playerSelection) {alert("It's a tie");}
+    else if(playerSelection=="rock") {
+      
+     switch(computerSelection) {
+      case "paper": 
+      alert("Paper beats rock. Computer wins!");
+      computer++;   
+      break;
+        case "scissors":
+        alert("Rock beats scissors.Player wins!");
+        player++;
+      break;   
+          
+           }
+    }
+      
+    else if(playerSelection=="paper") {
+      
+      switch(computerSelection) {
+        case "rock": 
+        alert("Paper beats rock. Player wins!")
+        player++;
+        break;
+        case "scissors":
+        alert("Scissors beat paper.Computer wins!");
+        computer++;
+        break; }
+    }
+            
+    else if(playerSelection=="scissors") {
+      
+      switch(computerSelection) {
+      case "paper": 
+      alert("Scissors beat paper. Player wins!");
+      player++;
+      break;
+      case "rock":
+      alert("Rock beats scissors. Computer wins!");
+      computer++;
+      break;
+           }
+    }
+      else {alert("invalid input"); }
+
+}
+
+function game() {
+  
+  for( i=0 ; i<5 ; i++){
+    
+     oneRound()
+     alert("Computer " + computer + " : " + "Player " +  player)   
+        }
+  
+  
+  
+ function declarewinner () {
+ if (player==computer) { alert("The match finishes with a tie")}
+   else if (player>computer) {alert("Player won")}
+   else (alert("Computer won"))
+}
+  declarewinner();
+  
+reset();
+
+  
+  
+}
+  
+function reset() {
+   player=0;
+   computer=0;
+}
+
+
+    
+
+    
+  </script>
+    
+</body>
+</html>
