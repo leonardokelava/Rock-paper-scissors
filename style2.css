@@ -1,0 +1,17 @@
+button {
+     
+    display:inline-block; 
+    margin: 200px auto;
+    width: 20%;
+    height:100px;
+    font-size:30px; 
+    font-weight: 800 ; 
+    
+
+ }
+div{
+
+ width: 80%; 
+ text-align:center; 
+}
+
